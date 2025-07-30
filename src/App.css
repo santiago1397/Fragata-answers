@@ -1,0 +1,135 @@
+/* app.css */
+
+@import "tailwindcss";
+
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --color-surface: hsl(207 97% 12%);
+  --color-text-body: hsl(207 97% 12%);
+  --color-brand-primary: hsl(207 97% 12%);
+  --color-brand-accent: hsl(207 97% 12%);
+  --color-background-light: hsl(0 0% 100%);
+  --color-background-dark: hsl(207 95% 8%);
+  --color-background-custom: hsl(187 71% 82%);
+  --color-background-pastel: hsl(279 100% 93%);
+}
+
+@layer base {
+  [data-theme="light"] {
+    --color-surface: #F0F9FF;
+    --color-brand-primary: #1E3A8A;
+    --color-brand-accent: #F87171;
+    --color-text-body: #000000;
+  }
+
+  [data-theme="dark"] {
+    --color-surface: #1E3A8A;
+    --color-brand-primary: #F87171;
+    --color-brand-accent: #FEF9C3;
+    --color-text-body: #F0F9FF;
+  }
+
+  [data-theme="custom"] {
+    --color-card: hsl(182, 87%, 39%);
+  }
+
+  [data-theme="pastel"] {
+    --color-card: hsl(291 46% 83%);
+  }
+
+
+}
+
+
+@layer components {
+  .subjects-container {
+    overflow: hidden ;
+    position: relative
+  }
+  .subject {
+    display: block;
+    height: 100%;
+    padding-left: 6px;
+    animation: subject-change 4s infinite;
+  }
+
+  @keyframes subject-change {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+/* :root[data-theme="light"] {
+  background-color: var(--color-background-light);
+}
+
+:root[data-theme="dark"] {
+  background-color: var(--color-background-dark);
+}
+
+:root[data-theme="custom"] {
+  background-color: var(--color-background-custom);
+}
+
+:root[data-theme="pastel"] {
+  background-color: var(--color-background-pastel);
+} */
+
+/* @theme {
+  
+  --palette-light-primary: #F0F9FF;
+  --palette-light-secondary: #1E3A8A;
+  --palette-light-accent: #F87171;
+  --palette-light-text: #000000;
+
+  --palette-dark-primary: #1E3A8A;
+  --palette-dark-secondary: #F87171;
+  --palette-dark-accent: #FEF9C3;
+  --palette-dark-text: #F0F9FF;
+
+
+  --color-surface: var(--palette-light-primary);
+  --color-text-body: var(--palette-light-text);
+  --color-brand-primary: var(--palette-light-secondary);
+  --color-brand-accent: var(--palette-light-accent);
+
+ 
+  --spacing-unit: 1rem;
+  --border-radius-base: 0.5rem;
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --shadow-default: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+body[data-theme="light"] {
+  --color-surface: var(--palette-light-primary);
+  --color-text-body: var(--palette-light-text);
+  --color-brand-primary: var(--palette-light-secondary);
+  --color-brand-accent: var(--palette-light-accent);
+}
+
+body[data-theme="dark"] {
+  
+  --color-surface: var(--palette-dark-primary);
+  --color-text-body: var(--palette-dark-text);
+  --color-brand-primary: var(--palette-dark-secondary);
+  --color-brand-accent: var(--palette-dark-accent);
+}
+
+
+html, body, #root {
+  height: 100%;
+}
+*/
+*,
+body {
+  transition: background-color 0.2s ease, color 0.3s ease;
+}
