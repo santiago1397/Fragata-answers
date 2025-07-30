@@ -108,7 +108,7 @@ export default function Page() {
           </div> : exercises.map((exercise) => {
             return (
               <div
-                className='cursor-pointer w-full max-w-60 p-2 border border-brand-primary rounded-lg bg-surface mb-5'
+                className='cursor-pointer w-full max-w-75 p-2 border border-brand-primary rounded-lg bg-surface mb-5'
                 key={exercise.id}
                 onClick={() => navigate(`/chapter/${exercise.id}`)}
               >
