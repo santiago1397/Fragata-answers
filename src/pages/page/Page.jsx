@@ -51,7 +51,7 @@ export default function Page() {
     console.log(next)
     if (next <= lastfirst.last) {
       navigate(`/page/${next}`)
-      navigate(0)
+      //navigate(0)
     }
     return
   }
@@ -62,7 +62,7 @@ export default function Page() {
     console.log(next)
     if (next >= lastfirst.first) {
       navigate(`/page/${next}`)
-      navigate(0)
+      //navigate(0)
     }
     return
   }
@@ -70,7 +70,7 @@ export default function Page() {
 
   useEffect(() => {
     getUnits()
-  }, []);
+  }, [pageId]);
 
   return (
     <div className="bg-surface  p-3 flex flex-col items-center">
