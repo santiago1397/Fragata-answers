@@ -125,11 +125,15 @@ export default function Page() {
       </div>
       {isLoading ? "Cargando..." :
         <div className="flex justify-between w-full p-5">
-          <button className="cursor-pointer bg-brand-primary w-25 px-3 py-1 text-surface font-bold">
+          <button 
+          onClick={HandlePrev}
+          className="cursor-pointer bg-brand-primary w-25 px-3 py-1 text-surface font-bold">
             Anterior
           </button>
 
-          <button className="cursor-pointer bg-brand-primary w-25 px-3 py-1 text-surface font-bold">
+          <button 
+          onClick={HandleNext}
+          className="cursor-pointer bg-brand-primary w-25 px-3 py-1 text-surface font-bold">
             Siguiente
           </button>
         </div>}
